@@ -14,7 +14,8 @@
 	<table align="center">
 		<div id="navi">
 		<a href="insertMovie.do">정보등록</a>
-		</div>
+		</div>		
+			<th>포스터</th>
 			<th>제목</th>
 			<th>감독</th>
 			<th>배우</th>
@@ -24,6 +25,13 @@
 		</tr>
 		<c:forEach var="movie" items="${movieList}">
 			<tr>
+				<td align="center">
+					
+						<a href="fileDown.do?fileName=${movie.filename}">
+							<img src="images/${movie.origfilename}" id="posterImg">
+						</a>
+					
+				</td>
 				<td align="center">${movie.title}</td>
 				<td align="center">${movie.director}</td>
 				<td align="center">${movie.actor}</td>
